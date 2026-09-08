@@ -10,8 +10,9 @@
 
 ### Changed
 
-- Updated dependencies.
+- Updated Go dependencies, including `golangci-lint` to v2.13.2 ([#291]).
 
+[#291]: https://github.com/dreikanter/notes/pull/291
 [#290]: https://github.com/dreikanter/notes/pull/290
 
 ## [0.5.2] - 2026-08-25
