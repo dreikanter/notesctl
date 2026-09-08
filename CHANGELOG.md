@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Updated Go dependencies, including `golangci-lint` to v2.13.2.
+
 ### Added
 
 - `notes skill --install` now detects Codex skills roots and supports `--target=codex` to install into `~/.codex/skills/notes/SKILL.md`.
