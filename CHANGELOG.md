@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- `notes skill --install` now detects Codex skills roots and supports `--target=codex` to install into `~/.codex/skills/notes/SKILL.md`.
+
 ## [0.5.2] - 2026-08-25
 
 ### Changed

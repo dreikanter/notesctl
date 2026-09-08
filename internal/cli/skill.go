@@ -50,6 +50,11 @@ func underHome(parts ...string) func() (string, error) {
 
 var targets = []installTarget{
 	{
+		Name:    "codex",
+		PathFor: underHome(".codex", "skills", "notes", "SKILL.md"),
+		RootDir: underHome(".codex", "skills"),
+	},
+	{
 		Name:    "claude",
 		PathFor: underHome(".claude", "skills", "notes", "SKILL.md"),
 		RootDir: underHome(".claude", "skills"),
@@ -119,6 +124,8 @@ instead of stdout. Each target names a filesystem destination, not an
 agent — multiple harnesses read from the same locations.
 
 Supported --target values:
+  codex     ~/.codex/skills/notes/SKILL.md
+            Read by: Codex
   claude    ~/.claude/skills/notes/SKILL.md
             Read by: Claude Code
   pi        ~/.pi/agent/skills/notes/SKILL.md

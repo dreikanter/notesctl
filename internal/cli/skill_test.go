@@ -234,15 +234,16 @@ func TestSkillInstallMissingRootDirectoryErrors(t *testing.T) {
 }
 
 func TestSkillInstallAllTargetsAutoDetect(t *testing.T) {
-	home := sandboxHome(t, "claude", "pi", "agents")
+	home := sandboxHome(t, "codex", "claude", "pi", "agents")
 
 	out, err := runSkill(t, "--install")
 	require.NoError(t, err)
-	for _, name := range []string{"claude", "pi", "agents"} {
+	for _, name := range []string{"codex", "claude", "pi", "agents"} {
 		assert.Contains(t, out, name)
 	}
 
 	for _, p := range []string{
+		filepath.Join(home, ".codex", "skills", "notes", "SKILL.md"),
 		filepath.Join(home, ".claude", "skills", "notes", "SKILL.md"),
 		filepath.Join(home, ".pi", "agent", "skills", "notes", "SKILL.md"),
 		filepath.Join(home, ".agents", "skills", "notes", "SKILL.md"),
@@ -256,6 +257,7 @@ func TestSkillInstallEachTargetExplicit(t *testing.T) {
 		name string
 		path []string
 	}{
+		{"codex", []string{".codex", "skills", "notes", "SKILL.md"}},
 		{"claude", []string{".claude", "skills", "notes", "SKILL.md"}},
 		{"pi", []string{".pi", "agent", "skills", "notes", "SKILL.md"}},
 		{"agents", []string{".agents", "skills", "notes", "SKILL.md"}},
@@ -278,6 +280,8 @@ func TestSkillHelpDocumentsTargets(t *testing.T) {
 	require.NoError(t, err)
 	assert.Contains(t, out, "Supported --target values:")
 	for _, fragment := range []string{
+		"codex",
+		"~/.codex/skills/notes/SKILL.md",
 		"claude",
 		"~/.claude/skills/notes/SKILL.md",
 		"Claude Code",
