@@ -2,9 +2,17 @@
 
 ## [Unreleased]
 
+## [0.5.3] - 2026-09-08
+
 ### Added
 
-- `notes skill --install` now detects Codex skills roots and supports `--target=codex` to install into `~/.codex/skills/notes/SKILL.md`.
+- `notes skill --install` now detects Codex skills roots and supports `--target=codex` to install into `~/.codex/skills/notes/SKILL.md` ([#290]).
+
+### Changed
+
+- Updated dependencies.
+
+[#290]: https://github.com/dreikanter/notes/pull/290
 
 ## [0.5.2] - 2026-08-25
 
